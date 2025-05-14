@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>Aplikacja pogodowa</title></head>
+<body>
+    <h2>Wybierz kraj:</h2>
+    <form action="/weather" method="post">
+        <label>Kraj:</label>
+        <select name="country">
+            {{ range $country, $_ := . }}
+                <option value="{{ $country }}">{{ $country }}</option>
+            {{ end }}
+        </select>
+        <br><br>
+        <label>Miasto:</label>
+        <select name="city">
+            <option value="Berlin">Berlin</option>
+            <option value="Warsaw">Warszawa</option>
+            <option value="Krakow">Kraków</option>
+            <option value="Chicago">Chicago</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Sprawdź pogodę">
+    </form>
+</body>
+</html>
